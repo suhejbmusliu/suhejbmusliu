@@ -9,7 +9,7 @@ export const profile = {
   phone: "+389 70 950 998 | +381 63 7438 734",
   links: {
     github: "https://github.com/suhejbmusliu",
-    linkedin: "https://www.linkedin.com/in/suhejbmusliu-8875691a8",
-    cv: "/Suhejb-Musliu-CV.pdf",
+    linkedin: "https://www.linkedin.com/in/suhejb-musliu-8875691a8",
+    cv: "/SuhejbCV-CE.pdf",
   },
 };

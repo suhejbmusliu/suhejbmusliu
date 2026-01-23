@@ -21,13 +21,25 @@ export default function About() {
         <p className="mt-3 text-sm leading-relaxed text-slate-300 max-w-3xl">
           I am a junior software developer with a strong foundation in web
           development and hands-on experience building real-world projects using
-          React, JavaScript, and Node.js. I focus on clean UI, responsive design,
-          and continuously improving my technical and problem-solving skills.
+          React, JavaScript, and Node.js. I enjoy turning ideas into functional,
+          user-friendly applications, with a focus on clean UI, responsive
+          design, and well-structured code.
+        </p>
+
+        <p className="mt-3 text-sm leading-relaxed text-slate-300 max-w-3xl">
+          Through my projects, I have gained practical experience working with
+          modern frontend tools, basic backend logic, and RESTful APIs, while
+          continuously improving my problem-solving and debugging skills. I pay
+          attention to usability and performance, and I try to write code that
+          is clear, maintainable, and easy to extend.
         </p>
 
         <p className="mt-3 text-sm leading-relaxed text-slate-300 max-w-3xl">
           I enjoy working on practical projects, learning new technologies, and
-          growing within a professional team environment.
+          challenging myself to grow with each task. I am motivated to develop
+          my skills further in a professional team environment, where I can
+          contribute, learn from others, and gain real-world experience as a
+          software developer
         </p>
       </div>
 
@@ -38,15 +50,11 @@ export default function About() {
           <p className="text-sm font-medium text-slate-100">
             {education.degree}
           </p>
-          <p className="mt-1 text-sm text-slate-300">
-            {education.university}
-          </p>
+          <p className="mt-1 text-sm text-slate-300">{education.university}</p>
           <p className="mt-2 text-xs text-slate-400">
             Status: {education.status}
           </p>
-          <p className="mt-1 text-xs text-slate-400">
-            {education.period}
-          </p>
+          <p className="mt-1 text-xs text-slate-400">{education.period}</p>
         </InfoCard>
 
         {/* Certification */}
