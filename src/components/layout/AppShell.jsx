@@ -13,15 +13,13 @@ export default function AppShell() {
   };
 
   return (
-    <div className="min-h-screen w-full text-slate-100">
-      {/* Mobile topbar (height ~56px) */}
+    <div className="min-h-[100dvh] w-full text-slate-100">
       <MobileTopbar active={active} onOpen={() => setMobileOpen(true)} />
 
-      {/* This block becomes full height */}
-      <div className="h-[calc(100vh-56px)] md:h-screen w-full px-3 py-4 sm:px-6 sm:py-6">
-        <div className="grid h-full w-full gap-4 md:grid-cols-[320px_1fr] md:gap-6">
-          {/* Desktop sidebar */}
-          <div className="hidden h-full md:block">
+      {/* Use dvh (fixes iPhone height issues) */}
+      <div className="min-h-[calc(100dvh-56px)] w-full px-3 py-4 sm:px-6 sm:py-6">
+        <div className="grid w-full gap-4 md:grid-cols-[320px_1fr] md:gap-6">
+          <div className="hidden md:block">
             <Sidebar active={active} onSelect={handleSelect} />
           </div>
 
@@ -29,29 +27,39 @@ export default function AppShell() {
           {mobileOpen && (
             <div className="fixed inset-0 z-50 md:hidden">
               <button
-                className="absolute inset-0 bg-black/60"
+                className="absolute inset-0 bg-black/70"
                 onClick={() => setMobileOpen(false)}
                 aria-label="Close menu overlay"
               />
-              <div className="absolute left-0 top-0 h-full w-[84%] max-w-xs bg-slate-900 p-4 shadow-xl">
-                <div className="mb-4 flex items-center justify-between">
+
+              {/* Drawer panel with safe-area + scrolling */}
+              <div
+                className="absolute left-0 top-0 h-[100dvh] w-[86%] max-w-xs
+                           bg-slate-950/95 backdrop-blur
+                           border-r border-white/10 shadow-2xl
+                           overflow-y-auto
+                           pt-[env(safe-area-inset-top)]
+                           pb-[env(safe-area-inset-bottom)]"
+              >
+                <div className="sticky top-0 z-10 flex items-center justify-between px-4 py-4 bg-slate-950/95 border-b border-white/10">
                   <div className="text-sm font-semibold tracking-wide text-slate-200">
                     MENU
                   </div>
                   <button
                     onClick={() => setMobileOpen(false)}
-                    className="rounded-lg px-3 py-2 text-sm hover:bg-white/10"
+                    className="rounded-lg px-3 py-2 text-sm text-slate-200 hover:bg-white/10"
                   >
                     Close
                   </button>
                 </div>
 
-                <Sidebar active={active} onSelect={handleSelect} />
+                <div className="p-4">
+                  <Sidebar active={active} onSelect={handleSelect} />
+                </div>
               </div>
             </div>
           )}
 
-          {/* Right content */}
           <ContentPanel active={active} />
         </div>
       </div>
