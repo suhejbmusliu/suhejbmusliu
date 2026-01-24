@@ -3,7 +3,6 @@ import {
   SiCss3,
   SiJavascript,
   SiReact,
-  SiTailwindcss,
   SiFigma,
   SiNodedotjs,
   SiExpress,
