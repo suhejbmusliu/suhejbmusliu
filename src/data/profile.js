@@ -10,6 +10,6 @@ export const profile = {
   links: {
     github: "https://github.com/suhejbmusliu",
     linkedin: "https://www.linkedin.com/in/suhejb-musliu-8875691a8",
-    cv: "/public/SuhejbCV-CE.pdf",
+    cv: "/SuhejbCV-CE.pdf",
   },
 };
